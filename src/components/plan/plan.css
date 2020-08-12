@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper-search {
+    max-width: 800px;
+    width: 100%;
+    background: #fff;
+    margin: 50px auto;
+    padding: 30px;
+}
+
+#react-google-places-autocomplete-input {
+    border-radius: 5px;
+    border: 1px solid #af9a7d !important;
+}
+
+.wrapper-place {
+    margin-top: 20px;
+}
+
+.wrapper-place .place-id {
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #919191;
+}
+
+.wrapper-place h3 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.wrapper-place span {
+    font-size: 12px;
+}
+
+.wrapper-place .place-description {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.wrapper-nearby {
+    background-color: #d6d6d6;
+    height: 80px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.nearby-header {
+    margin-top: 15px;
+    margin-bottom: 10px !important;
+}
+
+.place-meta {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #d6d6d6;
+    border-top: 1px solid #000000;
+}
+
+.place-meta div {
+    display: inline-block;
+    width: 33.33%;
+    text-align: center;
+}
+
+.place-meta .value {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #000000;
+}
