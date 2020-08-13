@@ -7,7 +7,7 @@ import PlanContainer from '../components/plan/Plan'
 const PlanTrip = () => {
   return (
     <>
-    <Hero hero="roomsHero">
+    <Hero hero="planHero">
       <Banner title = "Plan Your Trip">
       <Link to="/" className="btn-primary">
             return to Home
