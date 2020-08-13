@@ -8,8 +8,11 @@
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
+  --black: #696969;
   --mainGrey: #ececec;
-  --darkGrey: #cfcfcf;
+  --darkGrey: #e5e2e2;
+  --mainabout: #24222234;
+  --navbar:#24292e;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
@@ -19,7 +22,7 @@
 body {
   padding-top: 66px;
   color: var(--mainBlack);
-  background: var(--mainWhite);
+  background: var(--mainabout);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.4;
 }
@@ -52,7 +55,6 @@ h6 {
   font-weight: bold;
   margin-bottom: 1.5em;
 }
-
 .btn-primary {
   display: inline-block;
   text-decoration: none;
@@ -94,7 +96,7 @@ h6 {
   left: 0;
   width: 100%;
   padding: 0.75rem 2rem;
-  background: var(--offWhite);
+  background: var(--navbar);
   z-index: 1;
 }
 .nav-header {
@@ -121,7 +123,7 @@ h6 {
   display: block;
   text-decoration: none;
   padding: 1rem 0;
-  color: var(--mainBlack);
+  color: var(--offWhite);
   transition: var(--mainTransition);
   text-align: center;
   font-size: 1rem;
@@ -131,9 +133,11 @@ h6 {
 .nav-links a:hover {
   color: var(--primaryColor);
 }
-
+.right-nav{
+  float: right;
+}
 .show-nav {
-  height: 320px;
+  height: 380px;
 }
 @media screen and (min-width: 768px) {
   .nav-btn {
@@ -270,6 +274,57 @@ h6 {
   }
 }
 /*end of services */
+
+
+/* About */
+.abouts {
+  padding: 5rem 0;
+}
+.abouts {
+  background: var(--mainabout);
+  text-align: center;
+  color:var(--offWhite);
+}
+.abouts-center {
+  width: 90vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 50px;
+  color:var(--offWhite);
+}
+.about span {
+  display: inline-block;
+  color: var(--offWhite);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+.abouts h6 {
+  letter-spacing: var(--mainSpacing);
+  color:var(--offWhite);
+}
+.abouts p {
+  width: 80%;
+  margin: 0 auto;
+  color:var(--offWhite);
+}
+@media screen and (min-width: 992px) {
+  .abouts-center {
+    width: 95vw;
+    max-width: 1170px;
+    color:var(--offWhite);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .abouts p {
+    width: 100%;
+  }
+}
+/*end of about */
+
+
 /* featured rooms */
 
 .featured-rooms {
@@ -373,7 +428,6 @@ h6 {
   width: 100%;
   display: block;
   transition: var(--mainTransition);
-  height: 170px;
 }
 .price-top {
   position: absolute;
@@ -437,7 +491,6 @@ h6 {
 .single-room-images img {
   width: 100%;
   display: block;
-  height: 250px;
 }
 .single-room-info {
   width: 80vw;

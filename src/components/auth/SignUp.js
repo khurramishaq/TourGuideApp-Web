@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import firebase from '../firebase';
 import { ToastContainer, toast } from 'react-toastify';
 
-const db = firebase.firestore();
-
 class SignUp extends Component {
 
         constructor(props) {
@@ -74,7 +72,6 @@ class SignUp extends Component {
 
                 }).catch(error => {
                         // Handle Errors here.
-                        var errorCode = error.code;
                         var errorMessage = error.message;
                         console.log(errorMessage)
                         toast.error(errorMessage)
