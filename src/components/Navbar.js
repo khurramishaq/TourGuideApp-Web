@@ -26,9 +26,6 @@ export default class Navbar extends Component {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/plans">PlanTrip</Link>
-            </li>
-            <li>
               <Link to="/rooms">Hotels</Link>
             </li>
             <li><Link to="/places">Places</Link>
@@ -44,6 +41,9 @@ export default class Navbar extends Component {
               </>
               :
               <>
+                <li>
+                  <Link to="/plans">PlanTrip</Link>
+                </li>
                 <li>
                   <Link to="/blog">Blog</Link>
                 </li>
