@@ -7,8 +7,7 @@ if(rooms.length === 0){
 
   return (
     <div className = "empty-search">
-      <h3>Unfortunately no rooms matched your 
-        search parameters
+      <h3>Loading ...
       </h3>
     </div>
   )

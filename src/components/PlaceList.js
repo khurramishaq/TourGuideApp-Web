@@ -7,7 +7,7 @@ if(places.length === 0){
 
   return (
     <div className = "empty-search">
-      <h3>Unfortunately places matched your search
+      <h3>Loading ...
       </h3>
     </div>
   )

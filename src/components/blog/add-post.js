@@ -83,7 +83,7 @@ export default class AddPost extends Component {
         this.uploadImage(img).then((url) => {
             let post = {
                 title: title,
-                slug: `${slug}-${new Date().getTime()}`,
+                slug: slug,
                 description: description,
                 thumbnail: url,
                 createdAt: new Date().getTime(),
