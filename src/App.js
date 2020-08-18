@@ -4,9 +4,6 @@ import Home from "./pages/Home";
 import Rooms from "./pages/Rooms";
 import SingleRoom from "./pages/SingleRoom";
 
-import Tours from "./pages/Tours";
-import SingleTourPackage from "./pages/SingleTourPackage";
-
 import Places from "./pages/Places";
 import SinglePlace from "./pages/SinglePlace";
 
@@ -45,9 +42,6 @@ render(){
     <Route exact path="/" component={Home}/>
     <Route exact path="/rooms/" component={Rooms}/>
     <Route exact path="/rooms/:slug" component={SingleRoom}/>
-    
-    <Route exact path="/tours/" component={Tours}/>
-    <Route exact path="/tours/:slug" component={SingleTourPackage}/>
     
     <Route exact path="/places/" component={Places}/>
     <Route exact path="/places/:slug" component={SinglePlace}/>

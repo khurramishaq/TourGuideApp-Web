@@ -9,6 +9,7 @@ export default class SinglePlace extends
 Component {
   
   constructor(props){
+
     super(props)
     //console.log(this.props);
   this.state = {

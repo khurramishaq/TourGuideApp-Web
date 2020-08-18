@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Title from './Title'
-import {FaHotel, FaCalendarCheck, FaBlog, FaSuitcase} from 'react-icons/fa'
+import {FaHotel, FaPlane, FaBlog} from 'react-icons/fa'
 
 export default class Services extends Component {
   state={
@@ -11,20 +11,16 @@ export default class Services extends Component {
               info:'Nearest Hotels to the places you want to visit.'
           },
           {
-            icon:<FaCalendarCheck/>,
-            title:"Events",
-            info:'Events to be held nearby.'
+            icon:<FaPlane/>,
+            title:"Plan Trip",
+            info:'Plan your Trip with us.'
         },
         {
             icon:<FaBlog/>,
             title:"Blogging",
             info:'Post Blogs of your visit.'
         },
-        {
-            icon:<FaSuitcase/>,
-            title:"Tour Packages",
-            info:'Tour Packages being provided by us'
-        }
+        
       ]
   }
     render() {
