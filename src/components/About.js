@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Title from './Title'
-import { FaHotel, FaCalendarCheck, FaPlay, FaAppStore, FaMobile, FaFacebook, FaYoutube, FaPinterest } from 'react-icons/fa'
-import logo from '../images/logo3.png'
+import {FaMobile, FaFacebook, FaYoutube, FaPinterest } from 'react-icons/fa'
+import logo from '../images/logo.png'
 import { Link } from 'react-router-dom'
 
 export default class About extends Component {

@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import defaultBcg from '../images/room-1.jpeg'
 import Banner from '../components/Banner'
 import {Link} from 'react-router-dom'
 import {RoomContext} from "../context"
@@ -13,7 +12,6 @@ Component {
     //console.log(this.props);
   this.state = {
     slug:this.props.match.params.slug,
-    defaultBcg
   };
   
 }
@@ -35,7 +33,7 @@ static contextType = RoomContext;
       );
   }
     const {name,description,capacity,size,price,
-    extras,breakfast,pets,images} = room
+    breakfast,pets,images} = room
     
     const [mainImg,...defaultImg] = images;
     
@@ -80,14 +78,6 @@ static contextType = RoomContext;
         </div>
         </section>
 
-        <section className="room-extras">
-          {/* <h6>Extras</h6>
-          <ul className="extras">
-            {extras.map((item,index) =>{
-              return <li key={index}>-{item}</li>
-            })}
-          </ul> */}
-        </section>
       </>
     );
   }

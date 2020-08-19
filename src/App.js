@@ -14,6 +14,7 @@ import {Route, Switch, BrowserRouter} from
 
 import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
+
 import PlanTrip from "./pages/PlanTrip";
 
 import Blog from "./components/blog/list-posts"
@@ -32,6 +33,7 @@ class App extends Component{
   componentDidMount(){
     console.log("FIRE",firebase);
   }
+  
 render(){
   return (
 

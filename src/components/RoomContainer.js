@@ -1,9 +1,5 @@
 import React from 'react'
 import HotelFilter from '../components/hotels/HotelFilter'
-import RoomsFilter from './RoomFilter'
-import RoomsList from './RoomList'
-import {withRoomConsumer} from '../context'
-import Loading from './Loading'
 
 
 export default function RoomContainer() {

@@ -9,8 +9,6 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from './context'
 import {PlaceProvider} from './placecontext'
 
-import {PlanProvider} from './plancontext'
-
 import 'react-toastify/dist/ReactToastify.css';
 
 // import './components/css/font-awesome.css'
@@ -29,12 +27,9 @@ ReactDOM.render(
 
 <Provider>
 <Router>
-<PlanProvider>
 <PlaceProvider>
 <App />
 </PlaceProvider>
-</PlanProvider>
-
 </Router>
 </Provider>
 ,

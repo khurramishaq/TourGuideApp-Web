@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './blog.css'
-import defaultBcg from '../../images/room-1.jpeg'
 import Banner from '../Banner'
 import firebase from '../firebase'
 import Loader from 'react-loader-spinner'
@@ -12,7 +11,6 @@ export default class SinglePost extends Component {
         //console.log(this.props);
         this.state = {
             slug: this.props.match.params.slug,
-            defaultBcg,
             title: "",
             description: "",
             thumbnail: "",
