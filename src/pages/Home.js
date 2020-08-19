@@ -3,11 +3,8 @@ import Hero from '../components/Hero'
 import Banner from '../components/Banner'
 import {Link} from 'react-router-dom'
 import Services from '../components/Services'
-<<<<<<< HEAD
-import About from '../components/About'
-=======
 import Featured from '../components/Featured'
->>>>>>> parent of 154c679... Home Page updated
+import About from '../components/About'
 
 export default function Home() {  
   return (
@@ -20,7 +17,7 @@ export default function Home() {
       </Banner>
     </Hero>
     <Services />
-    <Featured/>
+    <About/>
     </>
   )
 }

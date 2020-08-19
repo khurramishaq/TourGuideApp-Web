@@ -1,5 +1,8 @@
 import React from 'react'
 import PlacesFilter from '../components/places/PlaceFilter'
+import PlacesList from './PlaceList'
+import {withPlaceConsumer} from '../placecontext'
+import loading from './Loading'
 
 function PlaceContainer() {
   return(

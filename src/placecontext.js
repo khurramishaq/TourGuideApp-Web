@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import items from './placedata'
 import firebase from './components/firebase'
 
 const PlaceContext = React.createContext();
@@ -12,7 +12,8 @@ class PlaceProvider extends Component {
     type: 'all',
     area: [],
     city: [],
-   
+    midpoint: 'all',
+    day: 'all',
   };
 
   //getData
@@ -114,17 +115,17 @@ class PlaceProvider extends Component {
   }
 
 
-  // formatData() {
-  //   let tempItems = items.map(item => {
-  //     let id = item.sys.id
-  //     let images = item.fields.images.map(image =>
-  //       image.fields.file.url);
+  formatData() {
+    let tempItems = items.map(item => {
+      let id = item.sys.id
+      let images = item.fields.images.map(image =>
+        image.fields.file.url);
 
-  //     let place = { ...item.fields, images, id };
-  //     return place;
-  //   });
-  //   return tempItems
-  // }
+      let place = { ...item.fields, images, id };
+      return place;
+    });
+    return tempItems
+  }
 
   getPlace = (slug) => {
     let tempPlaces = [...this.state.places];

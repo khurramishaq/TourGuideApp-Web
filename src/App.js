@@ -4,9 +4,6 @@ import Home from "./pages/Home";
 import Rooms from "./pages/Rooms";
 import SingleRoom from "./pages/SingleRoom";
 
-import Tours from "./pages/Tours";
-import SingleTourPackage from "./pages/SingleTourPackage";
-
 import Places from "./pages/Places";
 import SinglePlace from "./pages/SinglePlace";
 
@@ -17,7 +14,6 @@ import {Route, Switch, BrowserRouter} from
 
 import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
-
 import PlanTrip from "./pages/PlanTrip";
 
 import Blog from "./components/blog/list-posts"
@@ -36,7 +32,6 @@ class App extends Component{
   componentDidMount(){
     console.log("FIRE",firebase);
   }
-  
 render(){
   return (
 
@@ -47,9 +42,6 @@ render(){
     <Route exact path="/" component={Home}/>
     <Route exact path="/rooms/" component={Rooms}/>
     <Route exact path="/rooms/:slug" component={SingleRoom}/>
-    
-    <Route exact path="/tours/" component={Tours}/>
-    <Route exact path="/tours/:slug" component={SingleTourPackage}/>
     
     <Route exact path="/places/" component={Places}/>
     <Route exact path="/places/:slug" component={SinglePlace}/>

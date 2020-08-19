@@ -2,10 +2,10 @@ import React, {Component} from 'react'
 import defaultBcg from '../images/room-1.jpeg'
 import Banner from '../components/Banner'
 import {Link} from 'react-router-dom'
-import {RoomContext} from "../context"
+import {PlanContext} from "../plancontext"
 import StyledHero from '../components/StyledHero'
 
-export default class SingleRoom extends 
+export default class SinglePlan extends
 Component {
   
   constructor(props){
@@ -18,24 +18,23 @@ Component {
   
 }
 
-static contextType = RoomContext;
+static contextType = PlanContext;
 //componentDidMount(){}
 
   render() {
-    console.log(this.state.slug)
-    const {getRoom} = this.context;
-    const room = getRoom(this.state.slug);
-    if(!room){
+    const {getPlan} = this.context;
+    const plan = getPlan(this.state.slug);
+    if(!plan){
       return (<div className="error">
         <h3>no such result found</h3>
-        <Link to="/rooms" className="btn-praimary">
-          Back to rooms
+        <Link to="/plans" className="btn-praimary">
+          Back to Plan
         </Link>
       </div>
       );
   }
-    const {name,description,capacity,size,price,
-    extras,breakfast,pets,images} = room
+    const {name,description,
+    extras,images} = plan
     
     const [mainImg,...defaultImg] = images;
     
@@ -43,10 +42,10 @@ static contextType = RoomContext;
       <>
       <StyledHero img = {mainImg || 
       this.state.defaultBcg}>
-        <Banner title = {`${name} room`}>
-          <Link to="/rooms" className = 
+        <Banner title = {`${name} place`}>
+          <Link to="/plans" className = 
           "btn-primary">
-            Back to rooms
+            Back to plan a trip
           </Link>
         </Banner>
       </StyledHero>
@@ -65,28 +64,18 @@ static contextType = RoomContext;
       <p>{description}</p>
           </article>
           <articel className="info">
-            <h3>Info</h3>
-      <h6>price: Rs-{price}</h6>
-      <h6>size : {size}(SqFt)</h6>
-      <h6>Max capacity : {
-        capacity > 1 ? `${capacity} people` :
-        `${capacity} person`}
-        </h6>
-      <h6>{pets? "pets allowed" : "no pets allowed"
-      }</h6>
-      <h6>{breakfast && "free breakfast included"
-      }</h6>
+              
           </articel>
         </div>
         </section>
 
         <section className="room-extras">
-          {/* <h6>Extras</h6>
+          <h6>Extras</h6>
           <ul className="extras">
             {extras.map((item,index) =>{
               return <li key={index}>-{item}</li>
             })}
-          </ul> */}
+          </ul>
         </section>
       </>
     );

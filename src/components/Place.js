@@ -1,14 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import defaultImg from '../images/room-1.jpeg'
 import PropTypes from "prop-types"
 
 export default function Place({ place }) {
-  const { name, slug,} = place;
+  const { name, slug, images, } = place;
 
   return (
     <article className="room">
       <div className="img-container">
-       
+        <img src={images[0] || defaultImg} alt="single room" />
+
         <Link to={`/places/${slug}`} className="btn-primary room-link">
           Details
       </Link>

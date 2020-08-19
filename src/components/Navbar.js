@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import { FaAlignRight } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-<<<<<<< HEAD
-=======
-
->>>>>>> parent of 154c679... Home Page updated
+import logo from '../images/logo1.png'
 
 export default class Navbar extends Component {
   state = {

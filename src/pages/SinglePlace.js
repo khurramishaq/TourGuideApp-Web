@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import defaultBcg from '../images/room-1.jpeg'
 import Banner from '../components/Banner'
 import {Link} from 'react-router-dom'
 import {PlaceContext} from "../placecontext"
@@ -8,11 +9,12 @@ export default class SinglePlace extends
 Component {
   
   constructor(props){
+
     super(props)
     //console.log(this.props);
   this.state = {
     slug:this.props.match.params.slug,
-
+    defaultBcg
   };
   
 }
@@ -33,7 +35,7 @@ static contextType = PlaceContext;
       );
   }
     const {name,description,
-    images} = place
+    extras,images} = place
     
     const [mainImg,...defaultImg] = images;
     
@@ -68,7 +70,14 @@ static contextType = PlaceContext;
         </div>
         </section>
 
-        
+        <section className="room-extras">
+          {/* <h6>Extras</h6>
+          <ul className="extras">
+            {extras.map((item,index) =>{
+              return <li key={index}>-{item}</li>
+            })}
+          </ul> */}
+        </section>
       </>
     );
   }

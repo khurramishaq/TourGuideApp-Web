@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import items from './data';
 import firebase from './components/firebase'
 const RoomContext = React.createContext();
 
@@ -136,18 +137,18 @@ class Provider extends Component {
       .replace(/[^\w-]+/g, '');
   }
 
-  // formatData() {
-  //   let tempItems = items.map(item => {
-  //     let id = item.sys.id
-  //     let images = item.fields.images.map(image =>
-  //       image.fields.file.url);
+  formatData() {
+    let tempItems = items.map(item => {
+      let id = item.sys.id
+      let images = item.fields.images.map(image =>
+        image.fields.file.url);
 
-  //     let room = { ...item.fields, images, id };
-  //     return room;
+      let room = { ...item.fields, images, id };
+      return room;
 
-  //   });
-  //   return tempItems
-  // }
+    });
+    return tempItems
+  }
 
 
   getRoom = (slug) => {

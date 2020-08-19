@@ -11,8 +11,9 @@
   --black: #696969;
   --mainGrey: #ececec;
   --darkGrey: #e5e2e2;
-  --mainabout: #24222234;
-  --navbar:#24292e;
+  --mainabout: #2e2e2e;
+  --mainbody:#c1c1c1;
+  --navbar:#2e2e2e;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
@@ -20,9 +21,9 @@
 }
 /* globals */
 body {
-  padding-top: 66px;
+  padding-top: 62px;
   color: var(--mainBlack);
-  background: var(--mainabout);
+  background: var(--mainbody);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.4;
 }
@@ -99,6 +100,9 @@ h6 {
   background: var(--navbar);
   z-index: 1;
 }
+.nav-logo{
+  height: 10;
+}
 .nav-header {
   display: flex;
   justify-content: space-between;
@@ -173,6 +177,7 @@ h6 {
   min-height: 60vh;
 }
 
+
 .placeshero {
   min-height: calc(100vh - 66px);
   background: url("./images/defaultBcg.jpeg") center/cover no-repeat;
@@ -196,6 +201,8 @@ h6 {
   background-image: url("./images/plan.jpeg");
   min-height: 60vh;
 }
+
+
 
 /* End of Hero */
 /* Banner */
@@ -262,7 +269,7 @@ h6 {
   padding: 5rem 0;
 }
 .services {
-  background: var(--darkGrey);
+  background: var(--mainbody);
   text-align: center;
 }
 .services-center {
@@ -304,11 +311,16 @@ h6 {
 /* About */
 .abouts {
   padding: 5rem 0;
+  height: 320px;
+  padding-bottom: 295px;
 }
 .abouts {
   background: var(--mainabout);
-  text-align: center;
-  color:var(--offWhite);
+  text-align: auto;
+  color:var(--mainBlack);
+}
+.abouthr {
+color: #af9a7d;
 }
 .abouts-center {
   width: 90vw;
@@ -324,8 +336,9 @@ h6 {
   color: var(--offWhite);
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
+  border-spacing: 5px;
 }
-.abouts h6 {
+.abouts h5 {
   letter-spacing: var(--mainSpacing);
   color:var(--offWhite);
 }
