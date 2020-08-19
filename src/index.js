@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import './index.scss';
 import {BrowserRouter as Router} from 
 'react-router-dom'
 
@@ -8,6 +8,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from './context'
 import {PlaceProvider} from './placecontext'
+<<<<<<< HEAD
+=======
+import {TourProvider} from './tourcontext'
+import {PlanProvider} from './plancontext'
+>>>>>>> parent of 154c679... Home Page updated
 
 import 'react-toastify/dist/ReactToastify.css';
 
