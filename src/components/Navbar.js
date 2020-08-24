@@ -42,7 +42,10 @@ export default class Navbar extends Component {
               :
               <>
                 <li>
-                  <Link to="/plans">PlanTrip</Link>
+                  <Link to="/create-plan">PlanTrip</Link>
+                </li>
+                <li>
+                  <Link to="/plans">Plans</Link>
                 </li>
                 <li>
                   <Link to="/blog">Blog</Link>

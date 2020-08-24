@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-export default function PlaceMeta({meta}) {
+export default function PlaceMeta({ meta }) {
+    const [cost, setCost] = useState(0);
+    useEffect(() => {
+        setCost(Math.round(((meta.distanceValue / 1000) / 12) * 100));
+    });
     return (
         <div className="place-meta">
             <div id="distance">
@@ -12,7 +16,7 @@ export default function PlaceMeta({meta}) {
                 <p>Duration</p>
             </div>
             <div id="cost">
-                <p className="value"> 192.27</p>
+                <p className="value">{cost}</p>
                 <p>Travel Cost</p>
             </div>
         </div>

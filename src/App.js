@@ -15,6 +15,8 @@ import {Route, Switch, BrowserRouter} from
 import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
 import PlanTrip from "./pages/PlanTrip";
+import MyPlan from "./components/plan/MyPlan";
+import SinglePlan from "./components/plan/SinglePlan";
 
 import Blog from "./components/blog/list-posts"
 import AddPost from "./components/blog/add-post"
@@ -49,7 +51,9 @@ render(){
      <Route exact path='/login' component={Login}/>
      <Route exact path='/signup' component={SignUp}/>
     
-     <Route exact path='/plans' component={PlanTrip}/>
+     <Route exact path='/create-plan' component={PlanTrip}/>
+     <Route exact path='/plans' component={MyPlan}/>
+     <Route exact path='/plans/:id' component={SinglePlan}/>
 
      <Route exact path='/blog' component={Blog}/>
      <Route exact path='/blog/:slug' component={SinglePost}/>
