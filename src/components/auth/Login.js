@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import './login.css'
 import {Link} from 'react-router-dom'
-import '../auth/login.css'
 import firebase from '../firebase'
 import { ToastContainer, toast } from 'react-toastify';
 

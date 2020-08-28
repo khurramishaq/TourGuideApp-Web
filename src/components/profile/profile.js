@@ -24,7 +24,10 @@ export default class Profile extends Component {
             newName: "",
             newMobile: "",
             n: false,
-            m: false
+            m: false,
+            fileName: "",
+            img: "",
+            photo: ""
         }
     }
 
@@ -37,28 +40,29 @@ export default class Profile extends Component {
             loading: true
         })
         firebase
-        .firestore()
-        .collection("users")
-        .doc(this.state.email)
-        .get()
-        .then(async snapShot => {
-            this.setState({
-                name: snapShot.data().name,
-                mobile: snapShot.data().phone,
-                email: snapShot.data().email,
-                newName: snapShot.data().name,
-                newMobile: snapShot.data().phone,
-                loading: false
-            })
+            .firestore()
+            .collection("users")
+            .doc(this.state.email)
+            .get()
+            .then(async snapShot => {
+                this.setState({
+                    name: snapShot.data().name,
+                    mobile: snapShot.data().phone,
+                    email: snapShot.data().email,
+                    newName: snapShot.data().name,
+                    newMobile: snapShot.data().phone,
+                    photo: snapShot.data().photoURL,
+                    loading: false
+                })
 
-        }).catch(error => {
-            this.setState({
-                loading: false
-            })
-            var errorMessage = error.message;
-            console.log(errorMessage)
-            toast.error(errorMessage)
-        });
+            }).catch(error => {
+                this.setState({
+                    loading: false
+                })
+                var errorMessage = error.message;
+                console.log(errorMessage)
+                toast.error(errorMessage)
+            });
     }
     openModal = (att) => {
 
@@ -92,29 +96,98 @@ export default class Profile extends Component {
             enable: false,
         })
         firebase
-        .firestore()
-        .collection("users")
-        .doc(email)
-        .update({
-            name: newName,
-            phone: newMobile
-        })
-        .then(() => {
-            toast.success("profile successfully updated!")
-            this.setState({
-                update: "Update",
-                enable: true,
+            .firestore()
+            .collection("users")
+            .doc(email)
+            .update({
+                name: newName,
+                phone: newMobile
             })
-            this.closeModal();
-            this.fetchProfile();
-        }).catch(error => {
-            this.setState({
-                update: "Updating ........",
-                enable: true,
-            })
-            var errorMessage = error.message;
+            .then(() => {
+                toast.success("profile successfully updated!")
+                this.setState({
+                    update: "Update",
+                    enable: true,
+                })
+                this.closeModal();
+                this.fetchProfile();
+            }).catch(error => {
+                this.setState({
+                    update: "Updating ........",
+                    enable: true,
+                })
+                var errorMessage = error.message;
                 console.log(errorMessage)
                 toast.error(errorMessage)
+            });
+    }
+
+    // File select
+    fileSelect = (e) => {
+        let fullPath = e.target.files[0];
+        console.log(fullPath)
+        if (fullPath != null) {
+            const name = fullPath.name;
+            const type = fullPath.type;
+            const lastDot = name.lastIndexOf('.');
+
+            const fileName = name.substring(0, lastDot);
+
+            this.setState({
+                img: fullPath,
+                photo: fullPath,
+                fileName: `${fileName}`,
+            });
+            let reader = new FileReader();
+            reader.onloadend = () => {
+                //preview = reader.result;
+                this.setState({
+                    photo: reader.result
+                });
+            }
+            reader.readAsDataURL(fullPath)
+            this.handleUpdate(fullPath);
+
+        }
+    };
+
+    // Uploading image to firebase
+    uploadImage = async (image) => {
+
+        const imageRef = firebase.storage().ref(`/profile/${image.name}`);
+        await imageRef.put(image).catch((error) => {
+            throw error;
+        });
+        const url = await imageRef.getDownloadURL().catch((error) => {
+            throw error;
+        });
+        return url;
+    };
+
+    handleUpdate = (image) => {
+        toast.info("please wait....")
+        let {
+            email
+        } = this.state
+
+        this.uploadImage(image).then((url) => {
+
+            firebase.firestore().collection("users").doc(email).update({
+                photoURL: url
+            })
+                .then(() => {
+                    this.setState({
+                        img: "",
+                        fileName: "",
+                        photo: url
+
+                    });
+                    toast.success("Profile Image updated!");
+                }).catch(error => {
+                    var errorMessage = error.message;
+                    console.log(errorMessage)
+                    toast.error(errorMessage)
+                });
         });
     }
 
@@ -130,7 +203,8 @@ export default class Profile extends Component {
             newMobile,
             newName,
             n,
-            m
+            m,
+            photo
         } = this.state
         return (
             <>
@@ -153,8 +227,8 @@ export default class Profile extends Component {
                                             class="input"
                                             id="newName"
                                             value={newName}
-                                            required 
-                                            onChange={this.handleChange}/>
+                                            required
+                                            onChange={this.handleChange} />
                                     </div>
                                 }
                                 {m &&
@@ -165,8 +239,8 @@ export default class Profile extends Component {
                                             class="input"
                                             id="newMobile"
                                             value={newMobile}
-                                            required 
-                                            onChange={this.handleChange}/>
+                                            required
+                                            onChange={this.handleChange} />
                                     </div>
                                 }
 
@@ -191,12 +265,17 @@ export default class Profile extends Component {
                     </div>
                     :
                     <div className="container">
-                        <div class="wrapper">
+                        <div class="profile-wrapper">
                             <div className="title">
                                 Profile
                             </div>
                             <div className="profile-img">
-                                <img src={"https://coolbackgrounds.io/images/backgrounds/black/pure-black-background-f82588d3.jpg"} alt="profile img" />
+                                <img src={photo ? photo : "https://coolbackgrounds.io/images/backgrounds/black/pure-black-background-f82588d3.jpg"} alt="profile img" />
+                            </div>
+                            <div style={{ textAlign: "center", fontSize: 12 }}>
+                                <input type="file" name="file" id="file" class="inputfile" accept="image/*" onChange={this.fileSelect}/>
+                                <label for="file">Choose Profile</label>
+                                {/* <Link style={{color: "#000"}} onClick={this.fileSelect}>Change Profile</Link> */}
                             </div>
                             <div className="name">
                                 {name}

@@ -84,7 +84,7 @@ class ResetPassword extends Component {
         } = this.state
         return (
             <div className="container">
-                <div class="wrapper">
+                <div class="profile-wrapper">
                     <div class="title">
                         Reset Password
             </div>

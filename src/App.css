@@ -122,6 +122,7 @@ h6 {
   overflow: hidden;
   transition: var(--mainTransition);
   list-style-type: none;
+  text-align: right;
 }
 .nav-links a {
   display: block;
@@ -156,6 +157,7 @@ h6 {
     height: auto;
     display: flex;
     margin-left: 4rem;
+    align-items: flex-end;
   }
   .nav-links a {
     margin: 0 1rem;

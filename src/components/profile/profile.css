@@ -6,7 +6,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.wrapper {
+.profile-wrapper {
     max-width: 500px;
     width: 100%;
     background: #fff;
@@ -16,16 +16,16 @@
     border: 1px solid #cfcfcf;
 }
 
-.wrapper .title {
+.profile-wrapper .title {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 25px;
-    color: #af9a7d;
+    color: #24292e;
     text-transform: uppercase;
     text-align: center;
 }
 
-.wrapper .name {
+.profile-wrapper .name {
     font-size: 25px;
     font-weight: 500;
     margin-top: 25px;
@@ -35,7 +35,7 @@
     font-style: bold;
 }
 
-.wrapper .name a {
+.profile-wrapper .name a {
     font-size: 15px;
     font-weight: 500;
     margin-left: 5px;
@@ -74,22 +74,51 @@
     text-align: center;
 }
 
-.wrapper .other {
+.profile-wrapper .other {
     text-align: center;
 }
 
-.wrapper .other a{
+.profile-wrapper .other a{
     font-size: 15px;
     font-weight: 500;
     color: black;
 }
 
-.wrapper .profile-img {
+.profile-wrapper .profile-img {
     text-align: center;
 }
 
-.wrapper .profile-img img{
+.profile-wrapper .profile-img img{
     width: 100px;
     height: 100px;
     border-radius: 50%;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: black;
+    /* background-color: black; */
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: #C1C1C1;
+    color: white;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
 }

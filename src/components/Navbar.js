@@ -54,7 +54,7 @@ export default class Navbar extends Component {
                   <Link to="/profile">Profile</Link>
                 </li>
                 <li>
-                  <Link to="/" onClick={() => { window.localStorage.removeItem("isLogged"); window.location.replace('/') }}>LogOut</Link>
+                  <Link to="/" onClick={() => { window.localStorage.clear(); window.location.replace('/') }}>LogOut</Link>
                 </li>
               </>
             }

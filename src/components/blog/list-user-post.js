@@ -42,6 +42,9 @@ export default class Blog extends Component {
                     posts: list,
                     loading: false
                 })
+                if(list.length === 0) {
+                    toast.success("you don't have any post");
+                }
             }).catch(error => {
                 this.setState({
                     list: null,
@@ -111,7 +114,7 @@ export default class Blog extends Component {
                                                     if (window.confirm('Are you sure you wish to delete this item?')) {
                                                         this.removePost(post.slug);
                                                     }
-                                                }} style={{ marginLeft: 5 }}> <FaTrash /></Link>
+                                                }} style={{ marginLeft: 5 }}> <FaTrash style={{color: "red"}}/></Link>
                                             </h3>
                                         </div>
                                     </div>

@@ -39,7 +39,6 @@ export default class AddPost extends Component {
     // File select
     fileSelect = (e) => {
         let fullPath = e.target.files[0];
-        console.log(fullPath)
         if (fullPath != null) {
             const name = fullPath.name;
             const type = fullPath.type;
@@ -101,7 +100,7 @@ export default class AddPost extends Component {
 
             });
             toast.success("you have successfully publish post!")
-                
+            window.location.replace('/blog/my/posts');
             }).catch(error => {
                 var errorMessage = error.message;
                 console.log(errorMessage)
@@ -120,7 +119,7 @@ export default class AddPost extends Component {
         } = this.state
         return (
             <div className="container">
-                <div class="wrapper">
+                <div class="blog-wrapper">
                     <div class="title">
                         Publish New Post
                     </div>
