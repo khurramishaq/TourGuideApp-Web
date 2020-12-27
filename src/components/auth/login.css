@@ -11,7 +11,7 @@
   width: 100%;
   background: #fff;
   margin: 50px auto;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125);
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
   padding: 30px;
   border: 1px solid #24292e;
 }

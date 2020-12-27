@@ -14,7 +14,7 @@ if(rooms.length === 0){
 }
    
   return <section className = "roomlist">
-    <div className = "roomslist-center">
+    <div className = "roomslist-center bg-light">
       {
         rooms.map(item => {
           return <Room key={item.id} room={item}/>;

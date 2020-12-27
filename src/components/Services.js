@@ -25,7 +25,7 @@ export default class Services extends Component {
   }
     render() {
     return (
-      <section className="services">
+      <section className="services" style={{ backgroundColor: '#fff' }}>
     <Title title = 'services'></Title>
       <div className="services-center">
           {this.state.services.map((item, index) => {

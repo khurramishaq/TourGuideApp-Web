@@ -13,8 +13,9 @@ export default class Navbar extends Component {
   };
   render() {
     return (
-      <nav className='navbar' >
+      <nav className='navbar' style={{ backgroundColor: '#FCC102' }}>
         <div className="nav-center">
+          <img src={logo} style={{ width: 50 }} />
           <div className="nav-header">
             <button type="button" className="nav-btn" onClick={this.handleToggle}>
               <FaAlignRight className="nav-icon" />
@@ -23,20 +24,20 @@ export default class Navbar extends Component {
           <ul className={this.state.isOpen ?
             "nav-links show-nav" : "nav-links"}>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/"><i class="fa fa-home"></i>Home</Link>
             </li>
             <li>
-              <Link to="/rooms">Hotels</Link>
+              <Link to="/rooms"><i class="fa fa-hotel"></i>Hotels</Link>
             </li>
-            <li><Link to="/places">Places</Link>
+            <li><Link to="/places"><i class="fa fa-map-marker-alt"></i>Places</Link>
             </li>
             {!window.localStorage.getItem("isLogged") ?
               <>
                 <li>
-                  <Link to="/signup">SignUp</Link>
+                  <Link to="/signup"><i class="fa fa-sign-in-alt"></i>SignUp</Link>
                 </li>
                 <li>
-                  <Link to="/login">LogIn</Link>
+                  <Link to="/login" style={{ fontSize: 15 }}>LogIn</Link>
                 </li>
               </>
               :

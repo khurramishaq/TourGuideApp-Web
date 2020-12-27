@@ -11,7 +11,7 @@ export default function Home() {
     <>
     <Hero >
       <Banner title = "Plan Your Trip with Us" subtitle = "Beautiful Places">
-        <Link to="/rooms" className="btn-primary">
+        <Link to="/rooms" className="btn-primary" style={{ color: '#fff' }}>
             Hotels
         </Link>
       </Banner>

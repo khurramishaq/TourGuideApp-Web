@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 :root {
-  --primaryColor: #af9a7d;
+  --primaryColor: #fcc102;
+  --primaryColor1: #000000;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
@@ -115,7 +116,7 @@ h6 {
 }
 .nav-icon {
   font-size: 1.5rem;
-  color: var(--primaryColor);
+  color: '#ffffff';
 }
 .nav-links {
   height: 0;
@@ -136,7 +137,8 @@ h6 {
   letter-spacing: var(--mainSpacing);
 }
 .nav-links a:hover {
-  color: var(--primaryColor);
+  color: var(--primaryColor1);
+  border-bottom: 1px solid #000000;
 }
 .right-nav{
   float: right;
@@ -618,6 +620,7 @@ color: #af9a7d;
 /*  rooms fitler*/
 .filter-container {
   padding: 5rem 0;
+  background-color: #fff;
 }
 .filter-form {
   width: 60vw;
@@ -654,6 +657,12 @@ color: #af9a7d;
   display: inline-block;
   font-size: 0.8rem;
   margin-left: 0.5rem;
+}
+.footer-icons {
+  color: '#ffffff',
+}
+.footer-icons:hover {
+  color: '#fcc102',
 }
 @media screen and (min-width: 776px) {
   .filter-form {

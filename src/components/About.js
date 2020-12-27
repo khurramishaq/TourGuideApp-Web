@@ -21,18 +21,18 @@ export default class About extends Component {
 
         title: "Contact",
         info: 'Email: plantou04@gmail.com',
-        info1: 'Phone:+92-318-7504355'
+        info1: 'Phone: +(92) 318 7504 355'
       },
       {
 
         title: "Links",
         info: 'Go to the links',
-        icon1: <FaMobile />,
+        icon1: <i class="fa fa-mobile"></i>,
 
-        icon2: <FaFacebook />,
+        icon2: <i class="fa fa-facebook"></i>,
 
-        icon3: <FaYoutube />,
-        icon4: <FaPinterest />
+        icon3: <i class="fa fa-youtube"></i>,
+        icon4: <i class="fa fa-pinterest"></i>
       },
     ]
   }
@@ -44,17 +44,18 @@ export default class About extends Component {
           {this.state.abouts.map(
             (item, index) => {
               return <article key={index} className="about">
-                <span>{item.icon}</span>
-                <h3>{item.title}</h3>
-
-                <p>{item.info}</p>
-                <p>{item.info1}</p>
-                <span >{item.icon1}</span>
-                <span >{item.icon2}</span>
-                <span >{item.icon3}</span>
-                <span >{item.icon4}</span>
-
-              </article>
+                      <span>{item.icon}</span>
+                      <h3>{item.title}</h3>
+                  
+                      <p>{item.info}</p>
+                      <p>{item.info1}</p>
+                      <div className="footer-icons">
+                      <span style={{ fontSize: 20 }}>{item.icon1}</span>
+                      <span style={{ marginLeft: 10, fontSize: 20 }}>{item.icon2}</span>
+                      <span style={{ marginLeft: 10, fontSize: 20 }}>{item.icon3}</span>
+                      <span style={{ marginLeft: 10, fontSize: 20 }}>{item.icon4}</span>
+                      </div>
+                    </article>
             }
           )
           }
