@@ -9,13 +9,13 @@ export default function Place({ place }) {
   return (
     <article className="room">
       <div className="img-container">
-        <img src={images[0] || defaultImg} alt="single room" />
+        <img src={images[0] || defaultImg} alt="single room" height="200" />
 
         <Link to={`/places/${slug}`} className="btn-primary room-link">
           Details
       </Link>
       </div>
-      <p className="room-info">{name}</p>
+        <p className="room-info">{name}</p>
     </article>
   );
 }

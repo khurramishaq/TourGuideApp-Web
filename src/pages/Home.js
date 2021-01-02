@@ -9,7 +9,7 @@ import About from '../components/About'
 export default function Home() {  
   return (
     <>
-    <Hero >
+    <Hero hero = "homehero">
       <Banner title = "Plan Your Trip with Us" subtitle = "Beautiful Places">
         <Link to="/rooms" className="btn-primary" style={{ color: '#fff' }}>
             Hotels

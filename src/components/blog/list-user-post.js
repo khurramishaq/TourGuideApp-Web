@@ -42,7 +42,7 @@ export default class Blog extends Component {
                     posts: list,
                     loading: false
                 })
-                if(list.length === 0) {
+                if (list.length === 0) {
                     toast.success("you don't have any post");
                 }
             }).catch(error => {
@@ -77,7 +77,11 @@ export default class Blog extends Component {
             loading
         } = this.state
         return (
-            <div>
+            <div
+                style={{
+                    backgroundColor: "#ffff",
+                    height: window.innerHeight
+                }}>
                 {loading ?
                     <div
                         style={{
@@ -87,16 +91,16 @@ export default class Blog extends Component {
                             justifyContent: "center",
                             alignItems: "center"
                         }}>
-                        <Loader type="ThreeDots" color="#af9a7d" height="100" width="100" />
+                        <Loader type="ThreeDots" color="#072100" height="100" width="100" />
 
                     </div>
                     :
 
                     <>
-                        <section className="post-container">
-                            <div className="post-container-center">
+                        <section className="my-post-container">
+                            <div className="my-post-container-center">
                                 {posts.map((post) => (
-                                    <div>
+                                    <div className="room">
                                         <Link to={`/blog/${post.slug}`}>
                                             <div className="image-container">
                                                 <img
@@ -114,7 +118,7 @@ export default class Blog extends Component {
                                                     if (window.confirm('Are you sure you wish to delete this item?')) {
                                                         this.removePost(post.slug);
                                                     }
-                                                }} style={{ marginLeft: 5 }}> <FaTrash style={{color: "red"}}/></Link>
+                                                }} style={{ marginLeft: 5 }}> <FaTrash style={{ color: "red" }} /></Link>
                                             </h3>
                                         </div>
                                     </div>

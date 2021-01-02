@@ -18,7 +18,7 @@ export default class Blog extends Component {
 
     componentDidMount() {
         this.fetchPost();
-        
+
     }
 
     fetchPost = () => {
@@ -52,14 +52,18 @@ export default class Blog extends Component {
                 toast.error(errorMessage)
             });;
     }
-    
+
     render() {
         let {
             posts,
             loading
         } = this.state
         return (
-            <div>
+            <div
+                style={{
+                    backgroundColor: "#ffff",
+                    height: window.innerHeight
+                }}>>
                 {loading ?
                     <div
                         style={{
@@ -69,7 +73,7 @@ export default class Blog extends Component {
                             justifyContent: "center",
                             alignItems: "center"
                         }}>
-                        <Loader type="ThreeDots" color="#af9a7d" height="100" width="100" />
+                        <Loader type="ThreeDots" color="#072100" height="100" width="100" />
 
                     </div>
                     :

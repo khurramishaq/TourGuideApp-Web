@@ -69,7 +69,7 @@ const MyPlan = () => {
                             justifyContent: "center",
                             alignItems: "center"
                         }}>
-                        <Loader type="ThreeDots" color="#af9a7d" height="100" width="100" />
+                        <Loader type="ThreeDots" color="#072100" height="100" width="100" />
 
                     </div>
                     :

@@ -212,7 +212,6 @@ export default class Profile extends Component {
                     open={open}
                     onClose={this.closeModal}
                 >
-                    <div className="modal-header" />
                     <div className="container">
                         <div class="wrapper">
                             <div class="title">
@@ -257,10 +256,12 @@ export default class Profile extends Component {
                             width: "100%",
                             height: "100%",
                             display: "flex",
+                            height: window.innerHeight,
+                            backgroundColor: "#ffff",
                             justifyContent: "center",
                             alignItems: "center"
                         }}>
-                        <Loader type="ThreeDots" color="#af9a7d" height="100" width="100" />
+                        <Loader type="ThreeDots" color="#072100" height="100" width="100" />
 
                     </div>
                     :
@@ -274,7 +275,7 @@ export default class Profile extends Component {
                             </div>
                             <div style={{ textAlign: "center", fontSize: 12 }}>
                                 <input type="file" name="file" id="file" class="inputfile" accept="image/*" onChange={this.fileSelect}/>
-                                <label for="file">Choose Profile</label>
+                                <label for="file">Update Profile Picture</label>
                                 {/* <Link style={{color: "#000"}} onClick={this.fileSelect}>Change Profile</Link> */}
                             </div>
                             <div className="name">

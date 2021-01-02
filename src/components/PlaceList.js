@@ -1,26 +1,38 @@
 import React from 'react'
 import Place from './Place'
+import Loader from 'react-loader-spinner'
 
-export default function PlaceList({places}) {
+export default function PlaceList({ places }) {
 
-if(places.length === 0){
+  if (places.length === 0) {
 
-  return (
-    <div className = "empty-search">
-      <h3>Loading ...
-      </h3>
-    </div>
-  )
-}
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          backgroundColor: "#ffff",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>
+        <Loader type="ThreeDots" color="#072100" height="100" width="100" />
 
-return <section className = "roomlist">
-    <div className = "roomslist-center">
+      </div>
+    )
+  }
+
+  return <section
+    style={{
+      backgroundColor: "#ffff",
+    }}>
+    <div className="roomslist-center">
       {
         places.map(item => {
-          return <Place key={item.id} place={item}/>;
+          return <Place key={item.id} place={item} />;
         })
       }
     </div>
   </section>
-    
+
 }

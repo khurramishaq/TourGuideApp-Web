@@ -184,7 +184,7 @@
 .float{
   height: 60px;
   width: 60px;
-	background-color:#24292e;
+	background-color:#072100;
 	color:#FFF;
 	border-radius:50px;
 	text-align:center;
@@ -199,13 +199,31 @@
 /* post grid */
 
 .post-container {
-    padding: 5rem 0 5rem;
+    background-color: #fff;
+    padding: 5 0 5rem;
   }
   .post-container-center {
-    width: 80vw;
     margin: 0 auto;
+    width: 80vw;
+    align-content: center;
+    align-items: center;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-row-gap: 2rem;
+    grid-column-gap: 30px;
+  }
+
+  .my-post-container {
+    background-color: #fff;
+    padding: 5rem 0 5rem;
+  }
+  .my-post-container-center {
+    margin: 0 auto;
+    width: 80vw;
+    align-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-row-gap: 2rem;
     grid-column-gap: 30px;
   }
@@ -236,7 +254,7 @@
   .title {
     padding: 12px 1px 10px;
     margin: 0;
-    color: #565656;
+    color: #072100;
     overflow: hidden;
   }
   .title h3 {

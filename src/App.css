@@ -4,19 +4,19 @@
   box-sizing: border-box;
 }
 :root {
-  --primaryColor: #fcc102;
-  --primaryColor1: #000000;
+  --primaryColor: #072100;
+  --primaryColor1: #fcc102;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
   --black: #696969;
   --mainGrey: #ececec;
   --darkGrey: #e5e2e2;
-  --mainabout: #2e2e2e;
+  --mainabout: #072100;
   --mainbody:#c1c1c1;
-  --navbar:#2e2e2e;
+  --navbar:#082601;
   --mainTransition: all 0.3s linear;
-  --mainSpacing: 3px;
+  --mainSpacing: 1px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
@@ -61,7 +61,7 @@ h6 {
   display: inline-block;
   text-decoration: none;
   letter-spacing: var(--mainSpacing);
-  color: var(--mainBlack);
+  color: var(--mainWhite);
   background: var(--primaryColor);
   padding: 0.4rem 0.9rem;
   border: 3px solid var(--primaryColor);
@@ -71,7 +71,7 @@ h6 {
 }
 .btn-primary:hover {
   background: transparent;
-  color: var(--primaryColor);
+  color: var(--mainWhite);
 }
 .loading {
   text-transform: capitalize;
@@ -84,6 +84,7 @@ h6 {
   margin: 2rem 0;
 }
 .empty-search {
+  color: var(--primaryColor);
   text-align: center;
   text-transform: capitalize;
   margin: 2rem 0;
@@ -138,7 +139,7 @@ h6 {
 }
 .nav-links a:hover {
   color: var(--primaryColor1);
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid var(--primaryColor1);
 }
 .right-nav{
   float: right;
@@ -191,6 +192,18 @@ h6 {
 }
 .placeshero {
   background-image: url("./images/northern.jpeg");
+  min-height: 60vh;
+}
+
+.homehero {
+  min-height: calc(100vh - 66px);
+  background: url("./images/defaultBcg.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homehero {
+  background-image: url("./images/defaultBcg.jpeg") center/cover no-repeat;
   min-height: 60vh;
 }
 
@@ -256,6 +269,7 @@ h6 {
 }
 .section-title h4 {
   font-size: 2rem;
+  color: var(--primaryColor);
   letter-spacing: var(--mainSpacing);
   text-transform: capitalize;
   margin-bottom: 1rem;
@@ -456,6 +470,7 @@ color: #af9a7d;
 /* end of tour packages*/
 /* room */
 .room {
+  background: var(--mainGrey);
   box-shadow: var(--lightShadow);
   transition: var(--mainTransition);
 }
@@ -471,6 +486,7 @@ color: #af9a7d;
   display: block;
   transition: var(--mainTransition);
 }
+
 .price-top {
   position: absolute;
   top: 0;
@@ -594,7 +610,8 @@ color: #af9a7d;
 /* end of single room*/
 /* roomlist */
 .roomslist {
-  padding: 5rem 0;
+  background-color: var(--mainWhite);
+  padding: 5rem 0 5rem;
 }
 .roomslist-center {
   width: 80vw;
@@ -635,6 +652,8 @@ color: #af9a7d;
 }
 .form-group label {
   display: block;
+  color: var(--primaryColor);
+  font-weight: 600;
   letter-spacing: var(--mainSpacing);
   margin-bottom: 0.5rem;
 }
@@ -674,5 +693,10 @@ color: #af9a7d;
     width: 95vw;
     max-width: 1170px;
   }
+
+  .post-container {
+    margin-top: 25px;
+  }
+
 }
 /* end of rooms fitler*/

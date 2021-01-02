@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom'
 export default function Post({ post }) {
 
     return (
-        <div>
+        <div className="room">
             <Link to={`/blog/${post.slug}`}>
                 <div className="image-container">
                     <img
                         src={post.thumbnail}
                         alt={post.title}
+                        height="250"
                     />
                 </div>
             </Link>

@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Title from './Title'
-import { FaHotel, FaCalendarCheck, FaPlay, FaAppStore, FaMobile, FaFacebook, FaYoutube, FaPinterest } from 'react-icons/fa'
 import logo from '../images/logo3.png'
 import { Link } from 'react-router-dom'
 
@@ -20,19 +18,17 @@ export default class About extends Component {
       {
 
         title: "Contact",
-        info: 'Email: plantou04@gmail.com',
+        info: 'Email: plantour04@gmail.com',
         info1: 'Phone: +(92) 318 7504 355'
       },
       {
 
         title: "Links",
         info: 'Go to the links',
-        icon1: <i class="fa fa-mobile"></i>,
-
+        icon1: <i class="fa fa-whatsapp"></i>,
         icon2: <i class="fa fa-facebook"></i>,
-
-        icon3: <i class="fa fa-youtube"></i>,
-        icon4: <i class="fa fa-pinterest"></i>
+        icon3: <i class="fa fa-instagram"></i>,
+        icon4: <i class="fa fa-twitter"></i>
       },
     ]
   }

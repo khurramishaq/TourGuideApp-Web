@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { FaAlignRight } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import logo from '../images/logo1.png'
+import logo from '../images/logo3.png'
 
 export default class Navbar extends Component {
   state = {
@@ -13,7 +13,7 @@ export default class Navbar extends Component {
   };
   render() {
     return (
-      <nav className='navbar' style={{ backgroundColor: '#FCC102' }}>
+      <nav className='navbar' style={{ backgroundColor: '#072100' }}>
         <div className="nav-center">
           <img src={logo} style={{ width: 50 }} />
           <div className="nav-header">
@@ -24,38 +24,38 @@ export default class Navbar extends Component {
           <ul className={this.state.isOpen ?
             "nav-links show-nav" : "nav-links"}>
             <li>
-              <Link to="/"><i class="fa fa-home"></i>Home</Link>
+              <Link to="/"><i class="fa fa-home"></i> Home</Link>
             </li>
             <li>
-              <Link to="/rooms"><i class="fa fa-hotel"></i>Hotels</Link>
+              <Link to="/rooms"><i class="fa fa-hotel"></i> Hotels</Link>
             </li>
-            <li><Link to="/places"><i class="fa fa-map-marker-alt"></i>Places</Link>
+            <li><Link to="/places"><i class="fa fa-map-marker-alt"></i> Places</Link>
             </li>
             {!window.localStorage.getItem("isLogged") ?
               <>
                 <li>
-                  <Link to="/signup"><i class="fa fa-sign-in-alt"></i>SignUp</Link>
+                  <Link to="/signup"><i class="fa fa-user-plus"></i> Signup</Link>
                 </li>
                 <li>
-                  <Link to="/login" style={{ fontSize: 15 }}>LogIn</Link>
+                  <Link to="/login"><i class="fa fa-sign-in-alt"></i> Login</Link>
                 </li>
               </>
               :
               <>
                 <li>
-                  <Link to="/create-plan">PlanTrip</Link>
+                  <Link to="/create-plan"><i class="fa fa-plane"></i> Plan A Trip</Link>
                 </li>
                 <li>
-                  <Link to="/plans">Plans</Link>
+                  <Link to="/plans"><i class="fa fa-floppy-o"></i> My Plans</Link>
                 </li>
                 <li>
-                  <Link to="/blog">Blog</Link>
+                  <Link to="/blog"><i class="fa fa-blog"></i> Blog</Link>
                 </li>
                 <li>
-                  <Link to="/profile">Profile</Link>
+                  <Link to="/profile"><i class="fa fa-user"></i> Profile</Link>
                 </li>
                 <li>
-                  <Link to="/" onClick={() => { window.localStorage.clear(); window.location.replace('/') }}>LogOut</Link>
+                  <Link to="/" onClick={() => { window.localStorage.clear(); window.location.replace('/') }}><i class="fa fa-sign-out"></i> Logout</Link>
                 </li>
               </>
             }
