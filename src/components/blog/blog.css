@@ -99,7 +99,7 @@
 
 .blog-wrapper .form .inputfield p{
    font-size: 14px;
-   color: #757575;
+   color: #072100;
 }
 .blog-wrapper .form .inputfield .check{
   width: 15px;
@@ -117,7 +117,7 @@
 .blog-wrapper .form .inputfield .check .checkmark{
   width: 15px;
   height: 15px;
-  border: 1px solid #24292e;
+  border: 1px solid #072100;
   display: block;
   position: relative;
 }
@@ -134,7 +134,7 @@
   display: none;
 }
 .blog-wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark{
-  background: #24292e;
+  background: #072100;
 }
 
 .blog-wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark:before{
@@ -146,7 +146,8 @@
    padding: 8px 10px;
   font-size: 15px; 
   border: 0px;
-  background:  #24292e;
+  background:  #072100;
+  font-weight: 600;
   color: #fff;
   cursor: pointer;
   border-radius: 3px;
@@ -154,9 +155,10 @@
 }
 
 .blog-wrapper .form .inputfield .btn:hover{
-  background: #24292e;
+  background: #072100;
+  color: #fcc102;
+  font-weight: 600;
 }
-
 
 .blog-wrapper .form .inputfield:last-child{
   margin-bottom: 0;
@@ -167,7 +169,9 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  .blog-wrapper .form .inputfield label{
+  .blog-wrapper .form .inputfield .label{
+    color: #072100;
+    font-weight: 600;
     margin-bottom: 5px;
   }
   .blog-wrapper .form .inputfield.terms{
@@ -268,7 +272,7 @@
     text-overflow: ellipsis;
   }
   .title h3 a {
-    color: #565656;
+    color: #072100;
     text-decoration: none;
     /* line-height: 1.45;
     display: inline-block;

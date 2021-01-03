@@ -2,30 +2,37 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: content-box;
   font-family: 'Montserrat', sans-serif;
 }
-
+.container {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  max-height: 1000px;
+  margin: 50px auto;
+}
 .wrapper {
   max-width: 500px;
   width: 100%;
   background: #fff;
-  margin: 50px auto;
+  margin: 0 auto;
   box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.6), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
   padding: 30px;
-  border: 1px solid #24292e;
+  border: 1px solid #072100;
 }
 
 .wrapper .title {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 25px;
-  color: #24292e;
+  color: #072100;
   text-transform: uppercase;
   text-align: center;
 }
 
 .wrapper .form {
+  margin-top: 50px;
   width: 100%;
 }
 
@@ -42,16 +49,17 @@
 }
 
 .forgotfield a{
-  color: black;
+  color: #072100;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .wrapper .form .inputfield label {
   width: 200px;
-  color: #24292e;
+  color: #072100;
   margin-right: 10px;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .wrapper .form .inputfield .input, .wrapper .form .inputfield .textarea {
@@ -101,12 +109,12 @@
 }
 
 .wrapper .form .inputfield .input:focus, .wrapper .form .inputfield .textarea:focus, .wrapper .form .inputfield .custom_select select:focus {
-  border: 1px solid #24292e;
+  border: 1px solid #072100;
 }
 
 .wrapper .form .inputfield p {
   font-size: 14px;
-  color: #757575;
+  color: #072100;
 }
 
 .wrapper .form .inputfield .check {
@@ -127,7 +135,7 @@
 .wrapper .form .inputfield .check .checkmark {
   width: 15px;
   height: 15px;
-  border: 1px solid #24292e;
+  border: 1px solid #072100;
   display: block;
   position: relative;
 }
@@ -158,15 +166,18 @@
   padding: 8px 10px;
   font-size: 15px;
   border: 0px;
-  background: #24292e;
+  background: #072100;
   color: #fff;
+  font-weight: 600;
   cursor: pointer;
   border-radius: 3px;
   outline: none;
 }
 
 .wrapper .form .inputfield .btn:hover {
-  background: #24292e;
+  background: #072100;
+  color: #fcc102;
+  font-weight: 600;
 }
 
 .wrapper .form .inputfield:last-child {

@@ -45,7 +45,7 @@ const MyPlan = () => {
         maxWidth: "800px",
         width: "100%",
         height: 80,
-        background: "#eee",
+        background: "#072100",
         margin: "15px auto",
         padding: "30px",
         verticalAlign: "middle",
@@ -54,38 +54,46 @@ const MyPlan = () => {
     const anchorStyle = {
         textDecoration: "none",
         cursor: "pointer",
-        color: "#000"
+        color: "#ffff",
+        fontSize: 15
     }
     return (
-        <div className="container">
-            <div className="wrapper-search">
-                <Title title="Saved Plans"></Title>
-                {loading ?
-                    <div
-                        style={{
-                            width: "100%",
-                            height: "100%",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center"
-                        }}>
-                        <Loader type="ThreeDots" color="#072100" height="100" width="100" />
+        <div
+            style={{
+                width: "100%",
+                minHeight: window.innerHeight,
+                backgroundColor: "#ffff",
+            }}>
+            <div className="container">
+                <div className="wrapper-search">
+                    <Title title="Saved Plans"></Title>
+                    {loading ?
+                        <div
+                            style={{
+                                width: "100%",
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center"
+                            }}>
+                            <Loader type="ThreeDots" color="#072100" height="100" width="100" />
 
-                    </div>
-                    :
-                    <>
-                        {plans.map(plan => (
-                            <div style={style}>
-                                <Link style={anchorStyle} to={`/plans/${plan.id}`}>
-                                    <h4>{plan.data.searchedPlace.name}</h4>
-                                </Link>
-                            </div>
-                        ))}
-                    </>
-                }
+                        </div>
+                        :
+                        <>
+                            {plans.map(plan => (
+                                <div style={style}>
+                                    <Link style={anchorStyle} to={`/plans/${plan.id}`}>
+                                        <h4>{plan.data.searchedPlace.name}</h4>
+                                    </Link>
+                                </div>
+                            ))}
+                        </>
+                    }
+                </div>
+                <ToastContainer />
             </div>
-            <ToastContainer />
         </div>
+
     )
 }
 

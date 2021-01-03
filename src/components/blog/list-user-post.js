@@ -98,6 +98,9 @@ export default class Blog extends Component {
 
                     <>
                         <section className="my-post-container">
+                            <div style={{ marginTop: -50 }}>
+                                <h2 style={{ textAlign:  "center", color: "#072100" }}>My blogs </h2>
+                            </div>
                             <div className="my-post-container-center">
                                 {posts.map((post) => (
                                     <div className="room">

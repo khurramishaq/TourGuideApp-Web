@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './login.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import firebase from '../firebase'
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -53,41 +53,52 @@ class Login extends Component {
       enable
     } = this.state
     return (
-      <div className="container">
-        <div class="wrapper">
-          <div class="title">
-            Login Form
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          height: window.innerHeight,
+          backgroundColor: "#ffff",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>
+        <div className="container">
+          <div class="wrapper">
+            <div class="title">
+              Login Form
           </div>
-          <form class="form" onSubmit={this.handleSubmit}>
-            
-            <div class="inputfield">
-              <label>Email Address</label>
-              <input 
-                type="text" 
-                class="input" 
-                id="email" 
-                onChange={this.handleChange} 
-                required/>
-            </div>
-            <div class="inputfield">
-              <label>Password</label>
-              <input 
-                type="password" 
-                class="input" 
-                id="password" 
-                onChange={this.handleChange} 
-                required/>
-            </div>
-            <div class="inputfield">
-              <input type="submit" value={login} enabled={enable} class="btn" />
-            </div>
-          </form>
-          <div class="forgotfield">
+            <form class="form" onSubmit={this.handleSubmit}>
+
+              <div class="inputfield">
+                <label>Email Address</label>
+                <input
+                  type="text"
+                  class="input"
+                  id="email"
+                  onChange={this.handleChange}
+                  required />
+              </div>
+              <div class="inputfield">
+                <label>Password</label>
+                <input
+                  type="password"
+                  class="input"
+                  id="password"
+                  onChange={this.handleChange}
+                  required />
+              </div>
+              <div class="inputfield">
+                <input type="submit" value={login} enabled={enable} class="btn" />
+              </div>
+            </form>
+            <div class="forgotfield">
               <Link to="/forgot-password">Forgot Password?</Link>
             </div>
+          </div>
+          <ToastContainer />
         </div>
-        <ToastContainer />
-      </div>
+      </div >
     )
   }
 }

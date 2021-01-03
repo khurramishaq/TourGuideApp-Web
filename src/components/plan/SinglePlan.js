@@ -38,14 +38,21 @@ const SinglePlan = (props) => {
             {loading ?
                 <div
                     style={{
-                        width: "100%",
-                        height: "100%",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center"
+                        backgroundColor: "#ffff",
+                        minHeight: window.innerHeight,
+                        height: window.innerHeight
                     }}>
-                    <Loader type="ThreeDots" color="#af9a7d" height="100" width="100" />
+                    <div
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}>
+                        <Loader type="ThreeDots" color="#072100" height="100" width="100" />
 
+                    </div>
                 </div>
                 :
                 <div className="container">
@@ -53,17 +60,19 @@ const SinglePlan = (props) => {
                         <Title title={`${plan.searchedPlace.name} Trip`}></Title>
 
                         <Place place={{ placeID: id, description: plan.searchedPlace.address, city: plan.searchedPlace.name }} />
-                        <Nearby places={plan.nearbyRestaurantsOfPlace}  del={false}/>
-                        <PlaceMeta 
-                            meta={{ 
-                                distance:plan.distanceFromSelectedPlace.text, 
-                                duration: plan.durationFromSelectedPlace.text, 
-                                distanceValue: plan.distanceFromSelectedPlace.value }} />
+                        <Nearby places={plan.nearbyRestaurantsOfPlace} del={false} />
+                        <PlaceMeta
+                            meta={{
+                                distance: plan.distanceFromSelectedPlace.text,
+                                duration: plan.durationFromSelectedPlace.text,
+                                distanceValue: plan.distanceFromSelectedPlace.value
+                            }} />
                     </div>
                 </div>
             }
             <ToastContainer />
-        </div>
+        </div >
+
     )
 }
 export default SinglePlan

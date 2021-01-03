@@ -85,102 +85,114 @@ class SignUp extends Component {
                 } = this.state
                 return (
                         <>
-                                <div className="container">
-                                        <div class="wrapper">
-                                                <div class="title">
-                                                        Registration Form
+                                <div
+                                        style={{
+                                                width: "100%",
+                                                height: "100%",
+                                                display: "flex",
+                                                backgroundColor: "#ffff",
+                                                justifyContent: "center",
+                                                alignItems: "center"
+                                        }}>
+                                        <div className="container">
+                                                <div class="wrapper">
+                                                        <div class="title">
+                                                                Registration Form
           </div>
-                                                <form class="form" onSubmit={this.handleSubmit}>
-                                                        <div class="inputfield">
-                                                                <label>First Name</label>
-                                                                <input
-                                                                        type="text"
-                                                                        class="input"
-                                                                        id="fullName"
-                                                                        onChange={this.handleChange}
-                                                                        required />
-                                                        </div>
-                                                        <div class="inputfield">
-                                                                <label>Email Address</label>
-                                                                <input
-                                                                        type="text"
-                                                                        class="input"
-                                                                        id="email"
-                                                                        onChange={this.handleChange}
-                                                                        required />
-                                                        </div>
-                                                        <div class="inputfield">
-                                                                <label>Contact</label>
-                                                                <input
-                                                                        type="text"
-                                                                        class="input"
-                                                                        id="phone"
-                                                                        onChange={this.handleChange}
-                                                                        required />
-                                                        </div>
-                                                        <div class="inputfield">
-                                                                <label>CNIC</label>
-                                                                <input
-                                                                        type="text"
-                                                                        class="input"
-                                                                        id="cnic"
-                                                                        onChange={this.handleChange}
-                                                                        required />
-                                                        </div>
-                                                        <div class="inputfield">
-                                                                <label>Passport#</label>
-                                                                <input
-                                                                        type="text"
-                                                                        class="input"
-                                                                        id="passport"
-                                                                        onChange={this.handleChange}
-                                                                        required />
-                                                        </div>
-                                                        <div class="inputfield">
-                                                                <label>D.O.B</label>
-                                                                <input
-                                                                        type="date"
-                                                                        class="input"
-                                                                        id="dob"
-                                                                        onChange={this.handleChange}
-                                                                        required />
-                                                        </div>
-                                                        <div class="inputfield">
-                                                                <label>Gender</label>
-                                                                <div class="custom_select">
-                                                                        <select id="gender" onChange={this.handleChange} required>
-                                                                                <option value="">Select</option>
-                                                                                <option value="male">Male</option>
-                                                                                <option value="female">Female</option>
-                                                                                <option value="female">Other</option>
-                                                                        </select>
+                                                        <form class="form" onSubmit={this.handleSubmit}>
+                                                                <div class="inputfield">
+                                                                        <label>Full Name</label>
+                                                                        <input
+                                                                                type="text"
+                                                                                class="input"
+                                                                                id="fullName"
+                                                                                onChange={this.handleChange}
+                                                                                required />
                                                                 </div>
-                                                        </div>
-                                                        <div class="inputfield">
-                                                                <label>Password</label>
-                                                                <input
-                                                                        type="password"
-                                                                        class="input"
-                                                                        id="password"
-                                                                        onChange={this.handleChange}
-                                                                        required />
-                                                        </div>
-                                                        <div class="inputfield">
-                                                                <label>Confirm Password</label>
-                                                                <input
-                                                                        type="password"
-                                                                        class="input"
-                                                                        id="reEnter"
-                                                                        onChange={this.handleChange}
-                                                                        required />
-                                                        </div>
-                                                        <div class="inputfield">
-                                                                <input type="submit" value={register} enabled={enable} class="btn" />
-                                                        </div>
-                                                </form>
+                                                                <div class="inputfield">
+                                                                        <label>Email Address</label>
+                                                                        <input
+                                                                                type="text"
+                                                                                class="input"
+                                                                                id="email"
+                                                                                onChange={this.handleChange}
+                                                                                required />
+                                                                </div>
+                                                                <div class="inputfield">
+                                                                        <label>Contact</label>
+                                                                        <input
+                                                                                type="text"
+                                                                                class="input"
+                                                                                id="phone"
+                                                                                onChange={this.handleChange}
+                                                                                required />
+                                                                </div>
+                                                                <div class="inputfield">
+                                                                        <label>CNIC</label>
+                                                                        <input
+                                                                                type="text"
+                                                                                class="input"
+                                                                                id="cnic"
+                                                                                onChange={this.handleChange}
+                                                                                required />
+                                                                </div>
+                                                                <div class="inputfield">
+                                                                        <label>Passport#</label>
+                                                                        <input
+                                                                                type="text"
+                                                                                class="input"
+                                                                                id="passport"
+                                                                                onChange={this.handleChange}
+                                                                                required />
+                                                                </div>
+                                                                <div class="inputfield">
+                                                                        <label>D.O.B</label>
+                                                                        <input
+                                                                                type="date"
+                                                                                class="input"
+                                                                                id="dob"
+                                                                                onChange={this.handleChange}
+                                                                                required />
+                                                                </div>
+                                                                <div class="inputfield">
+                                                                        <label>Gender</label>
+                                                                        <div class="custom_select">
+                                                                                <select id="gender" onChange={this.handleChange} required>
+                                                                                        <option value="">Select</option>
+                                                                                        <option value="male">Male</option>
+                                                                                        <option value="female">Female</option>
+                                                                                        <option value="female">Other</option>
+                                                                                </select>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="inputfield">
+                                                                        <label>Password</label>
+                                                                        <input
+                                                                                type="password"
+                                                                                class="input"
+                                                                                id="password"
+                                                                                onChange={this.handleChange}
+                                                                                required />
+                                                                </div>
+                                                                <div class="inputfield">
+                                                                        <label>Confirm Password</label>
+                                                                        <input
+                                                                                type="password"
+                                                                                class="input"
+                                                                                id="reEnter"
+                                                                                onChange={this.handleChange}
+                                                                                required />
+                                                                </div>
+                                                                <div class="inputfield">
+                                                                        <input type="submit" value={register} enabled={enable} class="btn" />
+                                                                </div>
+                                                        </form>
+                                                </div>
+
+                                                <ToastContainer />
                                         </div>
                                 </div>
-                                <ToastContainer />
+
                         </>
                 )
         }

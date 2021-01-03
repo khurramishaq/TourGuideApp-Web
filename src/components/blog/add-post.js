@@ -20,7 +20,7 @@ export default class AddPost extends Component {
             title: e.target.value,
             slug: this.convertToSlug(e.target.value.trim())
         })
-        
+
     };
 
     convertToSlug(Text) {
@@ -89,23 +89,23 @@ export default class AddPost extends Component {
                 createdBy: window.localStorage.getItem("email")
             };
             firebase.firestore().collection("BLOG").doc(slug).set(post)
-            .then(() => {
-                this.setState({
-                    img: '',
-                    title: '',
-                    description: '',
-                    slug: '',
-                    submit: "Publish",
-                    enable: true,
+                .then(() => {
+                    this.setState({
+                        img: '',
+                        title: '',
+                        description: '',
+                        slug: '',
+                        submit: "Publish",
+                        enable: true,
 
-            });
-            toast.success("you have successfully publish post!")
-            window.location.replace('/blog/my/posts');
-            }).catch(error => {
-                var errorMessage = error.message;
-                console.log(errorMessage)
-                toast.error(errorMessage)
-            });
+                    });
+                    toast.success("you have successfully publish post!")
+                    window.location.replace('/blog/my/posts');
+                }).catch(error => {
+                    var errorMessage = error.message;
+                    console.log(errorMessage)
+                    toast.error(errorMessage)
+                });
         });
     }
 
@@ -125,43 +125,43 @@ export default class AddPost extends Component {
                     </div>
                     <form class="form" onSubmit={this.handleSubmit}>
                         <div class="inputfield">
-                            <label>Thumbnail</label>
-                            <input
-                                type="file"
-                                accept="image/*"
-                                class="input"
-                                id="file"
-                                onChange={this.fileSelect}
-                                required />
+                            <label style={{ color: "#072100", fontWeight: 600 }}>Thumbnail</label>
+                        <input
+                            type="file"
+                            accept="image/*"
+                            class="input"
+                            id="file"
+                            onChange={this.fileSelect}
+                            required />
                         </div>
-                        <div class="inputfield">
-                            <label>Title</label>
-                            <input
-                                type="text"
-                                class="input"
-                                id="title"
-                                onChange={this.handleChangeTitle}
-                                required 
-                                value={title}/>
-                        </div>
-                        <div class="inputfield">
-                            <label>Description</label>
-                            <textarea
-                                type="text"
-                                class="input"
-                                id="description"
-                                onChange={this.handleChange}
-                                required
-                                rows="8" 
-                                value={description}/>
-                        </div>
-                        <div class="inputfield">
-                            <input type="submit" value={submit} enabled={enable} class="btn" />
-                        </div>
+                    <div class="inputfield">
+                        <label style={{ color: "#072100", fontWeight: 600 }}>Title</label>
+                        <input
+                            type="text"
+                            class="input"
+                            id="title"
+                            onChange={this.handleChangeTitle}
+                            required
+                            value={title} />
+                    </div>
+                    <div class="inputfield">
+                        <label style={{ color: "#072100", fontWeight: 600 }}>Description</label>
+                        <textarea
+                            type="text"
+                            class="input"
+                            id="description"
+                            onChange={this.handleChange}
+                            required
+                            rows="8"
+                            value={description} />
+                    </div>
+                    <div class="inputfield">
+                        <input type="submit" value={submit} enabled={enable} class="btn" />
+                    </div>
                     </form>
-                </div>
-                <ToastContainer />
             </div>
+            <ToastContainer />
+            </div >
         )
     }
 }

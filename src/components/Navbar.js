@@ -49,7 +49,7 @@ export default class Navbar extends Component {
                   <Link to="/plans"><i class="fa fa-floppy-o"></i> My Plans</Link>
                 </li>
                 <li>
-                  <Link to="/blog"><i class="fa fa-blog"></i> Blog</Link>
+                  <Link to="/blog"><i class="fa fa-blog"></i> Blogs</Link>
                 </li>
                 <li>
                   <Link to="/profile"><i class="fa fa-user"></i> Profile</Link>

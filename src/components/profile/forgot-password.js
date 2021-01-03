@@ -54,29 +54,40 @@ class ForgotPassword extends Component {
             enable
         } = this.state
         return (
-            <div className="container">
-                <div class="profile-wrapper">
-                    <div class="title">
-                        Forgot Password
+            <div
+                style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    height: window.innerHeight,
+                    backgroundColor: "#ffff",
+                    justifyContent: "center",
+                    alignItems: "center"
+                }}>>
+                        <div className="container">
+                    <div class="profile-wrapper">
+                        <div class="title">
+                            Forgot Password
             </div>
-                    <form class="form" onSubmit={this.handleSubmit}>
+                        <form class="form" onSubmit={this.handleSubmit}>
 
-                        <div class="inputfield">
-                            <label>Email Address</label>
-                            <input
-                                type="email"
-                                class="input"
-                                id="email"
-                                onChange={this.handleChange}
-                                value={email}
-                                required />
-                        </div>
-                        <div class="inputfield">
-                            <input type="submit" value={reset} enabled={enable} class="btn" />
-                        </div>
-                    </form>
+                            <div class="inputfield">
+                                <label>Email Address</label>
+                                <input
+                                    type="email"
+                                    class="input"
+                                    id="email"
+                                    onChange={this.handleChange}
+                                    value={email}
+                                    required />
+                            </div>
+                            <div class="inputfield">
+                                <input type="submit" value={reset} enabled={enable} class="btn" />
+                            </div>
+                        </form>
+                    </div>
+                    <ToastContainer />
                 </div>
-                <ToastContainer />
             </div>
         )
     }

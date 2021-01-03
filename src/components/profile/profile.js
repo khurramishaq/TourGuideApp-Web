@@ -265,39 +265,50 @@ export default class Profile extends Component {
 
                     </div>
                     :
-                    <div className="container">
-                        <div class="profile-wrapper">
-                            <div className="title">
-                                Profile
+                    <div
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            display: "flex",
+                            height: window.innerHeight,
+                            backgroundColor: "#ffff",
+                            justifyContent: "center",
+                            alignItems: "center"
+                        }}>>
+                        <div className="container">
+                            <div class="profile-wrapper">
+                                <div className="title">
+                                    Profile
                             </div>
-                            <div className="profile-img">
-                                <img src={photo ? photo : "https://coolbackgrounds.io/images/backgrounds/black/pure-black-background-f82588d3.jpg"} alt="profile img" />
-                            </div>
-                            <div style={{ textAlign: "center", fontSize: 12 }}>
-                                <input type="file" name="file" id="file" class="inputfile" accept="image/*" onChange={this.fileSelect}/>
-                                <label for="file">Update Profile Picture</label>
-                                {/* <Link style={{color: "#000"}} onClick={this.fileSelect}>Change Profile</Link> */}
-                            </div>
-                            <div className="name">
-                                {name}
-                                <Link onClick={() => this.openModal("name")}><FaEdit /></Link>
-                            </div>
-                            <div className="extra">
-                                <div className="email">
-                                    <span><FiMail /></span>
-                                    {email}
+                                <div className="profile-img">
+                                    <img src={photo ? photo : "https://coolbackgrounds.io/images/backgrounds/black/pure-black-background-f82588d3.jpg"} alt="profile img" />
                                 </div>
-                                <div className="mobile">
-                                    <span><FiPhone /></span>
-                                    {mobile}
-                                    <Link onClick={() => this.openModal("mobile")}><FaEdit /></Link>
+                                <div style={{ textAlign: "center", fontSize: 12 }}>
+                                    <input type="file" name="file" id="file" class="inputfile" accept="image/*" onChange={this.fileSelect} />
+                                    <label for="file">Update Profile Picture</label>
+                                    {/* <Link style={{color: "#000"}} onClick={this.fileSelect}>Change Profile</Link> */}
                                 </div>
-                            </div>
-                            {/* <div className="other">
+                                <div className="name">
+                                    {name}
+                                    <Link onClick={() => this.openModal("name")}><FaEdit /></Link>
+                                </div>
+                                <div className="extra">
+                                    <div className="email">
+                                        <span><FiMail /></span>
+                                        {email}
+                                    </div>
+                                    <div className="mobile">
+                                        <span><FiPhone /></span>
+                                        {mobile}
+                                        <Link onClick={() => this.openModal("mobile")}><FaEdit /></Link>
+                                    </div>
+                                </div>
+                                {/* <div className="other">
                                 <Link to="/reset-password">
                                     Change Password
                                 </Link>
                             </div> */}
+                            </div>
                         </div>
                     </div>
                 }
