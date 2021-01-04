@@ -62,29 +62,36 @@ export default class SinglePost extends Component {
                 {loading ?
                     <div
                         style={{
-                            width: "100%",
-                            height: "100%",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center"
-                        }}>
-                        <Loader type="ThreeDots" color="#af9a7d" height="100" width="100" />
+                            backgroundColor: "#ffff",
+                            height: window.innerHeight
+                        }}>>
+                    <div
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center"
+                            }}>
+                            <Loader type="ThreeDots" color="#072100" height="100" width="100" />
 
+                        </div>
                     </div>
                     :
                     <>
-                        <div className="container">
-                            <img src={thumbnail} alt="Avatar" class="image" />
-                            <h1 className="overlay">{title} </h1>
-                        </div>
+                        
+                            <div className="container">
+                                    <img src={thumbnail} className="center" id="imageAlign"  alt="Avatar" />
+                                <h1 id="overlayAlign">{title} </h1>
+                            </div>
 
-                        <div className="single-post-container">
-                            <article className="descrip">
-                                <h3>Details</h3>
-                                <p>{description}</p>
-                            </article>
+                            <div className="single-post-container">
+                                <article className="descrip">
+                                    <h3>Description</h3>
+                                    <p>{description}</p>
+                                </article>
 
-                        </div>
+                            </div>
                     </>
                 }
                 <ToastContainer />

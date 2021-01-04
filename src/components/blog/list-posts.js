@@ -63,7 +63,7 @@ export default class Blog extends Component {
                 style={{
                     backgroundColor: "#ffff",
                     height: window.innerHeight
-                }}>>
+                }}>
                 {loading ?
                     <div
                         style={{
@@ -79,19 +79,21 @@ export default class Blog extends Component {
                     :
 
                     <>
-                        <section className="post-container">
-                            <div className="post-container-center">
-                                {posts.map((post) => <Post post={post} />)}
-                            </div>
-                        </section>
+                        <div>
+                            <section className="post-container " style={{ marginBottom: "45px", paddingBottom: "45px" }}>
+                                <div className="post-container-center mb-5 pb-5">
+                                    {posts.map((post) => <Post post={post} />)}
+                                </div>
+                            </section>
 
-                        <div className="floating">
-                            <Link to="/blog/my/posts" className="float" style={{ marginRight: 10 }}>
-                                <FaClipboardList className="my-float" />
-                            </Link>
-                            <Link to="/blog/new/add-post" className="float">
-                                <FaPlus className="my-float" />
-                            </Link>
+                            <div className="floating">
+                                <Link to="/blog/my/posts" className="float" style={{ marginRight: 10 }}>
+                                    <FaClipboardList className="my-float" />
+                                </Link>
+                                <Link to="/blog/new/add-post" className="float">
+                                    <FaPlus className="my-float" />
+                                </Link>
+                            </div>
                         </div>
                     </>
                 }

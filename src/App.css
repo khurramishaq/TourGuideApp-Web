@@ -24,7 +24,7 @@
 body {
   padding-top: 62px;
   color: var(--mainBlack);
-  background: var(--mainbody);
+  background: var(--mainWhite);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.4;
 }
